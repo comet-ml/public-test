@@ -61,8 +61,9 @@ jobs:
 
         - name: Package helm chart
           run: |
-            cd charts
-            helm package --version ${{env.VERSION_NAME}} public-test/
+            mkdir -p .cr-release-packages
+            cd .cr-release-packages
+            helm package --version ${{env.VERSION_NAME}} ../charts/public-test/
             cd -
 
         - name: Run chart-releaser
