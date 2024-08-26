@@ -63,7 +63,6 @@ jobs:
           run: |
             cd charts
             helm package --version ${{env.VERSION_NAME}} public-test/
-            ls
             cd -
 
         - name: Update Helm Charts repo index
@@ -77,7 +76,8 @@ jobs:
           run: |
             git config --local user.email "github-actions@comet.com"
             git config --local user.name "github-actions"
-            git commit -a -m "Publish helm chart ${{env.VERSION_NAME}}"
+            git add charts/*
+            git commit -m "Publish helm chart ${{env.VERSION_NAME}}"
             git push origin main
 
         - name: Summary
