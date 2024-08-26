@@ -66,6 +66,11 @@ jobs:
             helm package --version ${{env.VERSION_NAME}} ../charts/public-test/
             cd -
 
+        - name: Configure Git user
+          run: |
+            git config --local user.email "github-actions@comet.com"
+            git config --local user.name "github-actions"
+
         - name: Run chart-releaser
           uses: helm/chart-releaser-action@v1.6.0
           with:
