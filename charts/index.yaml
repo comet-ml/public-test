@@ -1,0 +1,18 @@
+apiVersion: v1
+entries:
+  public-test:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2024-08-26T14:55:18.415107154Z"
+    dependencies:
+    - name: nginx
+      repository: https://charts.bitnami.com/bitnami
+      version: 13.2.9
+    description: Helm chart for Public test
+    digest: 3fd3ac3f7f6014e16d146873422e70195d620945e6134c4c8da539b35776789d
+    name: public-test
+    type: application
+    urls:
+    - https://comet-ml.github.io/public-test/public-test-1.0.4.tgz
+    version: 1.0.4
+generated: "2024-08-26T14:55:18.411577911Z"
