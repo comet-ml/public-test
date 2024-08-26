@@ -53,7 +53,7 @@ jobs:
         - name: Run lint on Helm chart
           run: |
             set -e
-            cd deployment/helm_chart/opik
+            cd charts/public-test
             helm repo add bitnami https://charts.bitnami.com/bitnami
             helm dependency build
             helm lint --values values.yaml .
