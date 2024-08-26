@@ -65,20 +65,15 @@ jobs:
             helm package --version ${{env.VERSION_NAME}} public-test/
             cd -
 
-        - name: Update Helm Charts repo index
-          run: |
-            cd charts
-            helm repo index --url https://comet-ml.github.io/public-test/  --merge index.yaml .
-            cat index.yaml
-            cd -
-
-        - name: Push the changes
-          run: |
-            git config --local user.email "github-actions@comet.com"
-            git config --local user.name "github-actions"
-            git add charts/*
-            git commit -m "Publish helm chart ${{env.VERSION_NAME}}"
-            git push origin main
+        - name: Run chart-releaser
+          uses: helm/chart-releaser-action@v1.6.0
+          with:
+            charts_dir: charts
+            skip_packaging: true
+            skip_existing: true
+            packages_with_index: true
+          env:
+              CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
         - name: Summary
           run: |
