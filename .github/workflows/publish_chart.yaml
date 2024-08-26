@@ -63,12 +63,14 @@ jobs:
           run: |
             cd charts
             helm package --version ${{env.VERSION_NAME}} public-test/
+            ls
             cd -
 
         - name: Update Helm Charts repo index
           run: |
             cd charts
             helm repo index --url https://comet-ml.github.io/public-test/  --merge index.yaml .
+            cat index.yaml
             cd -
 
         - name: Push the changes
