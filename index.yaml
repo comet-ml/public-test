@@ -3,21 +3,21 @@ entries:
   public-test:
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2024-08-28T08:39:00.378208893Z"
+    created: "2024-08-28T12:33:50.621796297Z"
     dependencies:
     - name: nginx
       repository: https://charts.bitnami.com/bitnami
       version: 13.2.9
     description: Helm chart for Public test
-    digest: 1dd6dfd9834c957d79e1801df2d54fd1db584858b4c7eb790877bb80b56467a7
+    digest: 7beee6b5f171c56805067750cd73fc8121f25b5bb2f1d83e4ac20a1c3ed782a9
     name: public-test
     type: application
     urls:
-    - https://raw.githubusercontent.com/comet-ml/public-test/gh-pages/public-test-1.0.22.tgz
-    version: 1.0.22
+    - https://raw.githubusercontent.com/comet-ml/public-test/gh-pages/public-test-1.0.23.tgz
+    version: 1.0.23
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2024-08-28T08:39:00.375626796Z"
+    created: "2024-08-28T12:33:50.619351778Z"
     dependencies:
     - name: nginx
       repository: https://charts.bitnami.com/bitnami
@@ -29,4 +29,4 @@ entries:
     urls:
     - https://raw.githubusercontent.com/comet-ml/public-test/gh-pages/public-test-1.0.21.tgz
     version: 1.0.21
-generated: "2024-08-28T08:39:00.372920025Z"
+generated: "2024-08-28T12:33:50.616031247Z"
