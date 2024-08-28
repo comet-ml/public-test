@@ -59,26 +59,10 @@ jobs:
               helm repo index . --url https://raw.githubusercontent.com/comet-ml/public-test/gh-pages/
               git config user.name "Helm Updater"
               git config user.email "actions@users.noreply.github.com"
-              git add $(git ls-files -o --exclude-standard)
               git add index.yaml
               git commit -m "Updated from ref: $GITHUB_SHA"
               git push   
 
-        # - name: Run chart-releaser
-        #   uses: helm/chart-releaser-action@be16258da8010256c6e82849661221415f031968 # v1.5.0
-        #   with:
-        #       charts_dir: charts
-        #   env:
-        #       CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-
-        # - name: Run chart-releaser
-        #   uses: helm/chart-releaser-action@v1.6.0
-        # #   with:
-        # #     skip_packaging: true
-        # #     skip_existing: true
-        # #     packages_with_index: true
-        #   env:
-        #       CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-
+        
 
 
